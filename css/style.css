@@ -523,3 +523,153 @@ td {
         grid-template-columns: 1fr;
     }
 }
+
+/* ---------- Add Application Form ---------- */
+
+.form-panel {
+    max-width: 1000px;
+    margin-bottom: 25px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.form-group label {
+    color: #e2e8f0;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 13px 14px;
+    background-color: #111c2f;
+    color: #f8fafc;
+    border: 1px solid #3b4b66;
+    border-radius: 9px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input,
+.form-group select {
+    min-height: 46px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.6;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #8190a9;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #b9a5ff;
+    box-shadow: 0 0 0 3px rgba(185, 165, 255, 0.15);
+}
+
+.form-group select option {
+    background-color: #19263b;
+    color: #f8fafc;
+}
+
+.form-group input[type="date"] {
+    color-scheme: dark;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 14px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.primary-button,
+.secondary-button {
+    padding: 13px 20px;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.primary-button {
+    background-color: #b9a5ff;
+    color: #17152a;
+    border: 1px solid #b9a5ff;
+}
+
+.primary-button:hover {
+    background-color: #d0c4ff;
+    transform: translateY(-2px);
+}
+
+.secondary-button {
+    background-color: #263650;
+    color: #e2e8f0;
+    border: 1px solid #465773;
+}
+
+.secondary-button:hover {
+    background-color: #344663;
+}
+
+.form-message {
+    margin-top: 20px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.form-message:empty {
+    display: none;
+}
+
+.form-message.success {
+    color: #6ee7b7;
+}
+
+.form-message.error {
+    color: #fda4af;
+}
+
+@media (max-width: 700px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .form-actions button {
+        width: 100%;
+    }
+}

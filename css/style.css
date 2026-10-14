@@ -673,3 +673,134 @@ td {
         width: 100%;
     }
 }
+
+/* ---------- My Applications Page ---------- */
+
+.application-summary {
+    margin-top: 25px;
+}
+
+.application-controls {
+    margin-bottom: 25px;
+}
+
+.filter-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 18px;
+}
+
+.results-count {
+    color: #c4b5fd;
+    background-color: #293650;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.applications-table th {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.applications-table td {
+    vertical-align: middle;
+}
+
+.company-name {
+    color: #f8fafc;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.job-name {
+    color: #9eacc3;
+    font-size: 12px;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.status-applied {
+    color: #bfdbfe;
+    background-color: #1e3a5f;
+}
+
+.status-interview {
+    color: #ddd6fe;
+    background-color: #45336f;
+}
+
+.status-offer {
+    color: #a7f3d0;
+    background-color: #174c40;
+}
+
+.status-rejected {
+    color: #fecdd3;
+    background-color: #652d3b;
+}
+
+.application-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.action-button {
+    border: 1px solid #455570;
+    background-color: #263650;
+    color: #e2e8f0;
+    padding: 7px 10px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.action-button:hover {
+    border-color: #b9a5ff;
+    color: #d8ccff;
+}
+
+.delete-button:hover {
+    border-color: #fda4af;
+    color: #fda4af;
+}
+
+.list-empty {
+    padding: 35px 15px;
+}
+
+.list-empty[hidden] {
+    display: none;
+}
+
+.list-empty .topbar-button {
+    margin-top: 8px;
+}
+
+@media (max-width: 900px) {
+    .filter-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .filter-grid .form-group:first-child {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 600px) {
+    .filter-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-grid .form-group:first-child {
+        grid-column: auto;
+    }
+}

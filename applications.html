@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="description" content="View, search, edit and manage your job and internship applications in CareerTrack.">
     <title>My Applications | CareerTrack</title>
 
     <link rel="stylesheet" href="css/style.css">
@@ -12,193 +12,197 @@
 </head>
 <body>
 
-    <div class="app-container">
+<div class="app-container">
 
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <div class="logo">
-                <span class="logo-icon">💼</span>
-                <h2>Career<span>Track</span></h2>
+    <aside class="sidebar">
+        <div class="logo">
+            <span class="logo-icon">💼</span>
+            <h2>Career<span>Track</span></h2>
+        </div>
+
+        <p class="menu-heading">MENU</p>
+
+        <nav class="sidebar-nav" aria-label="Main navigation">
+            <a href="index.html" class="nav-link">▦ Dashboard</a>
+            <a href="applications.html" class="nav-link active" aria-current="page">▤ My Applications</a>
+            <a href="add-application.html" class="nav-link">＋ Add Application</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="motivation-icon">✦</div>
+            <h3>Your next opportunity awaits!</h3>
+            <p>Keep track of your progress and take one step closer to your dream career.</p>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <p class="topbar-label">YOUR CAREER WORKSPACE</p>
+                <h2>My Applications</h2>
             </div>
 
-            <p class="menu-heading">MENU</p>
+            <a href="add-application.html" class="topbar-button">
+                + Add Application
+            </a>
+        </header>
 
-            <nav class="sidebar-nav">
-                <a href="index.html" class="nav-link">▦ Dashboard</a>
-                <a href="applications.html" class="nav-link active">▤ My Applications</a>
-                <a href="add-application.html" class="nav-link">＋ Add Application</a>
-            </nav>
-
-            <div class="sidebar-bottom">
-                <div class="motivation-icon">✦</div>
-                <h3>Your next opportunity awaits!</h3>
-                <p>Keep track of your progress and take one step closer to your dream career.</p>
+        <section class="welcome-section">
+            <div>
+                <p class="eyebrow">YOUR CAREER JOURNEY</p>
+                <h1>Every opportunity counts! ✨</h1>
+                <p class="welcome-text">
+                    Keep all your applications organised in one place
+                    and stay on top of your next career move.
+                </p>
             </div>
-        </aside>
 
-        <!-- Main Content -->
-        <main class="main-content">
+            <div class="welcome-illustration" aria-hidden="true">📋</div>
+        </section>
 
-            <header class="topbar">
+        <!-- Summary Statistics -->
+        <section class="stats-grid application-summary">
+
+            <article class="stat-card blue-card">
+                <div class="stat-top">
+                    <span>Total Applications</span>
+                    <span class="stat-icon">📄</span>
+                </div>
+                <h2 id="listTotal">0</h2>
+                <p>All recorded applications</p>
+            </article>
+
+            <article class="stat-card purple-card">
+                <div class="stat-top">
+                    <span>Interviews</span>
+                    <span class="stat-icon">🗓️</span>
+                </div>
+                <h2 id="listInterviews">0</h2>
+                <p>Interview opportunities</p>
+            </article>
+
+            <article class="stat-card green-card">
+                <div class="stat-top">
+                    <span>Offers</span>
+                    <span class="stat-icon">🎉</span>
+                </div>
+                <h2 id="listOffers">0</h2>
+                <p>Offers received</p>
+            </article>
+
+            <article class="stat-card pink-card">
+                <div class="stat-top">
+                    <span>Rejected</span>
+                    <span class="stat-icon">↗</span>
+                </div>
+                <h2 id="listRejected">0</h2>
+                <p>Applications closed</p>
+            </article>
+
+        </section>
+
+        <!-- Search and Filter -->
+        <section class="panel">
+            <div class="panel-heading">
                 <div>
-                    <p class="topbar-label">YOUR CAREER WORKSPACE</p>
-                    <h2>My Applications</h2>
+                    <p class="eyebrow">FIND AN OPPORTUNITY</p>
+                    <h2>Manage Applications</h2>
+                </div>
+            </div>
+
+            <div class="filter-grid">
+
+                <div class="form-group">
+                    <label for="searchInput">Search</label>
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Search company or job title..."
+                        autocomplete="off"
+                    >
                 </div>
 
+                <div class="form-group">
+                    <label for="statusFilter">Filter by Status</label>
+                    <select id="statusFilter">
+                        <option value="All">All Statuses</option>
+                        <option value="Applied">Applied</option>
+                        <option value="Interview">Interview</option>
+                        <option value="Offer">Offer</option>
+                        <option value="Rejected">Rejected</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="sortOrder">Sort By Date</label>
+                    <select id="sortOrder">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                    </select>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Application Records -->
+        <section class="panel">
+            <div class="panel-heading">
+                <div>
+                    <p class="eyebrow">YOUR RECORDS</p>
+                    <h2>Application List</h2>
+                </div>
+
+                <span id="resultsCount" class="results-count">0 applications</span>
+            </div>
+
+            <div class="table-wrapper">
+                <table class="applications-table">
+                    <thead>
+                        <tr>
+                            <th>Company & Position</th>
+                            <th>Date Applied</th>
+                            <th>Status</th>
+                            <th>Interview</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="applicationsTableBody"></tbody>
+                </table>
+            </div>
+
+            <div id="emptyState" class="empty-state" hidden>
+                <span class="empty-icon" aria-hidden="true">📂</span>
+                <h3 id="emptyTitle">No applications yet</h3>
+                <p id="emptyDescription">
+                    Add your first application to get started.
+                </p>
                 <a href="add-application.html" class="topbar-button">
                     + Add Application
                 </a>
-            </header>
+            </div>
+        </section>
 
-            <section class="welcome-section">
-                <div>
-                    <p class="eyebrow">YOUR CAREER JOURNEY</p>
-                    <h1>Every opportunity counts! ✨</h1>
-                    <p class="welcome-text">
-                        Keep all your applications organised in one place
-                        and stay on top of your next career move.
-                    </p>
-                </div>
+        <footer class="footer">
+            Made with 💜 for your career journey.
+        </footer>
 
-                <div class="welcome-illustration">📋</div>
-            </section>
+    </main>
+</div>
 
-            <!-- Summary -->
-            <section class="stats-grid application-summary">
+<!-- Application Details Dialog -->
+<dialog id="detailsDialog" class="details-dialog">
+    <h2>Application Details</h2>
 
-                <div class="stat-card blue-card">
-                    <div class="stat-top">
-                        <span>Total Applications</span>
-                        <span class="stat-icon">📄</span>
-                    </div>
-                    <h2 id="listTotal">0</h2>
-                    <p>All recorded applications</p>
-                </div>
+    <div id="detailsContent" class="details-content"></div>
 
-                <div class="stat-card purple-card">
-                    <div class="stat-top">
-                        <span>Interviews</span>
-                        <span class="stat-icon">📅</span>
-                    </div>
-                    <h2 id="listInterviews">0</h2>
-                    <p>Interview opportunities</p>
-                </div>
-
-                <div class="stat-card green-card">
-                    <div class="stat-top">
-                        <span>Offers</span>
-                        <span class="stat-icon">🎉</span>
-                    </div>
-                    <h2 id="listOffers">0</h2>
-                    <p>Offers received</p>
-                </div>
-
-                <div class="stat-card pink-card">
-                    <div class="stat-top">
-                        <span>Rejected</span>
-                        <span class="stat-icon">✕</span>
-                    </div>
-                    <h2 id="listRejected">0</h2>
-                    <p>Applications closed</p>
-                </div>
-
-            </section>
-
-            <!-- Search and Filter -->
-            <section class="panel application-controls">
-
-                <div class="panel-heading">
-                    <div>
-                        <p class="eyebrow">FIND AN OPPORTUNITY</p>
-                        <h2>Manage Applications</h2>
-                    </div>
-                </div>
-
-                <div class="filter-grid">
-
-                    <div class="form-group">
-                        <label for="searchInput">Search</label>
-                        <input
-                            type="search"
-                            id="searchInput"
-                            placeholder="Search company or job title..."
-                        >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="statusFilter">Filter by Status</label>
-                        <select id="statusFilter">
-                            <option value="All">All Statuses</option>
-                            <option value="Applied">Applied</option>
-                            <option value="Interview">Interview</option>
-                            <option value="Offer">Offer</option>
-                            <option value="Rejected">Rejected</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="sortOrder">Sort By Date</label>
-                        <select id="sortOrder">
-                            <option value="newest">Newest First</option>
-                            <option value="oldest">Oldest First</option>
-                        </select>
-                    </div>
-
-                </div>
-
-            </section>
-
-            <!-- Applications Table -->
-            <section class="panel recent-panel">
-
-                <div class="panel-heading">
-                    <div>
-                        <p class="eyebrow">YOUR RECORDS</p>
-                        <h2>Application List</h2>
-                    </div>
-
-                    <span id="resultsCount" class="results-count">
-                        0 applications
-                    </span>
-                </div>
-
-                <div class="table-wrapper">
-                    <table class="applications-table">
-                        <thead>
-                            <tr>
-                                <th>Company & Position</th>
-                                <th>Date Applied</th>
-                                <th>Status</th>
-                                <th>Interview</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-
-                        <tbody id="applicationsTableBody">
-                            <!-- Applications are added by JavaScript -->
-                        </tbody>
-                    </table>
-                </div>
-
-                <div id="emptyState" class="empty-state list-empty" hidden>
-                    <span class="empty-icon">📂</span>
-                    <p id="emptyTitle">No applications yet</p>
-                    <span id="emptyDescription">
-                        Add your first application to get started.
-                    </span>
-                    <a href="add-application.html" class="topbar-button">
-                        + Add Application
-                    </a>
-                </div>
-
-            </section>
-
-            <footer class="footer">
-                Made with 💜 for your career journey.
-            </footer>
-
-        </main>
+    <div class="dialog-actions">
+        <button type="button" id="closeDetails" class="secondary-button">
+            Close
+        </button>
     </div>
+</dialog>
 
 </body>
 </html>

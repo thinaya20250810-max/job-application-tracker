@@ -4,204 +4,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | Job Application Tracker</title>
+    <meta name="description" content="CareerTrack helps you organise job and internship applications, track interviews and monitor your career progress.">
+    <title>Dashboard | CareerTrack</title>
+
     <link rel="stylesheet" href="css/style.css">
     <script src="js/app.js" defer></script>
 </head>
 <body>
 
-    <div class="app-container">
+<div class="app-container">
 
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <div class="logo">
-                <span class="logo-icon">💼</span>
-                <h2>Career<span>Track</span></h2>
+    <aside class="sidebar">
+        <div class="logo">
+            <span class="logo-icon">💼</span>
+            <h2>Career<span>Track</span></h2>
+        </div>
+
+        <p class="menu-heading">MENU</p>
+
+        <nav class="sidebar-nav" aria-label="Main navigation">
+            <a href="index.html" class="nav-link active" aria-current="page">▦ Dashboard</a>
+            <a href="applications.html" class="nav-link">▤ My Applications</a>
+            <a href="add-application.html" class="nav-link">＋ Add Application</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="motivation-icon">✦</div>
+            <h3>Your next opportunity awaits!</h3>
+            <p>Keep track of your progress and take one step closer to your dream career.</p>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <p class="topbar-label">YOUR CAREER WORKSPACE</p>
+                <h2>Job Application Tracker</h2>
             </div>
 
-            <p class="menu-heading">MENU</p>
+            <a href="add-application.html" class="topbar-button">
+                + Add Application
+            </a>
+        </header>
 
-            <nav class="sidebar-nav">
-                <a href="index.html" class="nav-link active">▦ Dashboard</a>
-                <a href="applications.html" class="nav-link">▤ My Applications</a>
-                <a href="add-application.html" class="nav-link">＋ Add Application</a>
-            </nav>
-
-            <div class="sidebar-bottom">
-                <div class="motivation-icon">✦</div>
-                <h3>Your next opportunity awaits!</h3>
-                <p>Keep track of your progress and take one step closer to your dream career.</p>
+        <section class="welcome-section">
+            <div>
+                <p class="eyebrow">YOUR JOURNEY STARTS HERE</p>
+                <h1>Welcome back! ✨</h1>
+                <p class="welcome-text">
+                    Every application is a step towards your future.
+                    Let's make it count.
+                </p>
             </div>
-        </aside>
 
-        <!-- Main Content -->
-        <main class="main-content">
+            <div class="welcome-illustration" aria-hidden="true">🚀</div>
+        </section>
 
-            <header class="topbar">
-                <div>
-                    <p class="topbar-label">YOUR CAREER WORKSPACE</p>
-                    <h2>Job Application Tracker</h2>
+        <!-- Main Statistics -->
+        <section class="stats-grid" aria-label="Application statistics">
+
+            <article class="stat-card blue-card">
+                <div class="stat-top">
+                    <span>Total Applications</span>
+                    <span class="stat-icon" aria-hidden="true">📄</span>
                 </div>
-                <a href="add-application.html" class="topbar-button">
-                    + Add Application
-                </a>
-            </header>
+                <h2 id="totalApplications">0</h2>
+                <p>Applications tracked</p>
+            </article>
 
-            <section class="welcome-section">
-                <div>
-                    <p class="eyebrow">YOUR JOURNEY STARTS HERE</p>
-                    <h1>Welcome back! <span>✨</span></h1>
-                    <p class="welcome-text">
-                        Every application is a step towards your future.
-                        Let's make it count.
-                    </p>
+            <article class="stat-card purple-card">
+                <div class="stat-top">
+                    <span>Interviews</span>
+                    <span class="stat-icon" aria-hidden="true">🗓️</span>
                 </div>
-                <div class="welcome-illustration">🚀</div>
-            </section>
+                <h2 id="totalInterviews">0</h2>
+                <p>Interview opportunities</p>
+            </article>
 
-            <!-- Statistics -->
-            <section class="stats-grid">
-
-                <div class="stat-card blue-card">
-                    <div class="stat-top">
-                        <span>Total Applications</span>
-                        <span class="stat-icon">📄</span>
-                    </div>
-                    <h2 id="totalApplications">0</h2>
-                    <p>Applications tracked</p>
+            <article class="stat-card green-card">
+                <div class="stat-top">
+                    <span>Offers</span>
+                    <span class="stat-icon" aria-hidden="true">🎉</span>
                 </div>
+                <h2 id="totalOffers">0</h2>
+                <p>Offers received</p>
+            </article>
 
-                <div class="stat-card purple-card">
-                    <div class="stat-top">
-                        <span>Interviews</span>
-                        <span class="stat-icon">📅</span>
-                    </div>
-                    <h2 id="interviewCount">0</h2>
-                    <p>Interview opportunities</p>
+            <article class="stat-card pink-card">
+                <div class="stat-top">
+                    <span>Rejected</span>
+                    <span class="stat-icon" aria-hidden="true">↗</span>
                 </div>
+                <h2 id="totalRejected">0</h2>
+                <p>Applications closed</p>
+            </article>
 
-                <div class="stat-card green-card">
-                    <div class="stat-top">
-                        <span>Offers</span>
-                        <span class="stat-icon">🎉</span>
-                    </div>
-                    <h2 id="offerCount">0</h2>
-                    <p>Offers received</p>
-                </div>
+        </section>
 
-                <div class="stat-card pink-card">
-                    <div class="stat-top">
-                        <span>Rejected</span>
-                        <span class="stat-icon">↗</span>
-                    </div>
-                    <h2 id="rejectedCount">0</h2>
-                    <p>Applications closed</p>
-                </div>
+        <!-- Overview and Upcoming Interviews -->
+        <section class="dashboard-grid">
 
-            </section>
-
-            <!-- Application Overview -->
-            <section class="content-grid">
-
-                <div class="panel status-panel">
-                    <div class="panel-heading">
-                        <div>
-                            <p class="eyebrow">AT A GLANCE</p>
-                            <h2>Application Overview</h2>
-                        </div>
-                        <span class="heading-icon">◉</span>
-                    </div>
-
-                    <div class="status-list">
-                        <div class="status-row">
-                            <span class="status-dot applied-dot"></span>
-                            <span>Applied</span>
-                            <strong id="appliedCount">0</strong>
-                        </div>
-
-                        <div class="status-row">
-                            <span class="status-dot interview-dot"></span>
-                            <span>Interview</span>
-                            <strong id="overviewInterviewCount">0</strong>
-                        </div>
-
-                        <div class="status-row">
-                            <span class="status-dot offer-dot"></span>
-                            <span>Offer</span>
-                            <strong id="overviewOfferCount">0</strong>
-                        </div>
-
-                        <div class="status-row">
-                            <span class="status-dot rejected-dot"></span>
-                            <span>Rejected</span>
-                            <strong id="overviewRejectedCount">0</strong>
-                        </div>
-                    </div>
-
-                    <a href="applications.html" class="text-link">
-                        View all applications →
-                    </a>
-                </div>
-
-                <!-- Upcoming Interviews -->
-                <div class="panel">
-                    <div class="panel-heading">
-                        <div>
-                            <p class="eyebrow">STAY PREPARED</p>
-                            <h2>Upcoming Interviews</h2>
-                        </div>
-                        <span class="heading-icon">♧</span>
-                    </div>
-
-                    <div id="upcomingInterviews" class="empty-state">
-                        <span class="empty-icon">📅</span>
-                        <p>No upcoming interviews yet.</p>
-                        <span>Your scheduled interviews will appear here.</span>
-                    </div>
-                </div>
-
-            </section>
-
-            <!-- Recent Applications -->
-            <section class="panel recent-panel">
+            <article class="panel">
                 <div class="panel-heading">
                     <div>
-                        <p class="eyebrow">YOUR LATEST ACTIVITY</p>
-                        <h2>Recent Applications</h2>
+                        <p class="eyebrow">AT A GLANCE</p>
+                        <h2>Application Overview</h2>
                     </div>
-                    <a href="applications.html" class="text-link">
-                        View all →
-                    </a>
+                    <span class="heading-icon" aria-hidden="true">◉</span>
                 </div>
 
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Company</th>
-                                <th>Position</th>
-                                <th>Applied Date</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody id="recentApplications">
-                            <tr>
-                                <td colspan="4" class="table-empty">
-                                    No applications yet. Add your first application!
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="overview-list">
+
+                    <div class="overview-item">
+                        <span class="overview-dot dot-applied"></span>
+                        <span>Applied</span>
+                        <strong id="overviewApplied">0</strong>
+                    </div>
+
+                    <div class="overview-item">
+                        <span class="overview-dot dot-interview"></span>
+                        <span>Interview</span>
+                        <strong id="overviewInterview">0</strong>
+                    </div>
+
+                    <div class="overview-item">
+                        <span class="overview-dot dot-offer"></span>
+                        <span>Offer</span>
+                        <strong id="overviewOffer">0</strong>
+                    </div>
+
+                    <div class="overview-item">
+                        <span class="overview-dot dot-rejected"></span>
+                        <span>Rejected</span>
+                        <strong id="overviewRejected">0</strong>
+                    </div>
+
                 </div>
-            </section>
+            </article>
 
-            <footer class="footer">
-                Made with 💜 for your career journey.
-            </footer>
+            <article class="panel">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">STAY PREPARED</p>
+                        <h2>Upcoming Interviews</h2>
+                    </div>
+                    <span class="heading-icon" aria-hidden="true">♧</span>
+                </div>
 
-        </main>
-    </div>
+                <div id="upcomingInterviews">
+                    <p>No upcoming interviews yet.</p>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- Recent Applications -->
+        <section class="panel">
+            <div class="panel-heading">
+                <div>
+                    <p class="eyebrow">RECENT ACTIVITY</p>
+                    <h2>Recent Applications</h2>
+                </div>
+
+                <a href="applications.html" class="action-button">
+                    View All →
+                </a>
+            </div>
+
+            <div class="table-wrapper">
+                <table class="applications-table">
+                    <thead>
+                        <tr>
+                            <th>Company & Position</th>
+                            <th>Date Applied</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recentApplicationsBody"></tbody>
+                </table>
+            </div>
+
+            <div id="recentEmptyState" class="empty-state" hidden>
+                <span class="empty-icon" aria-hidden="true">📂</span>
+                <p>No applications added yet.</p>
+                <a href="add-application.html" class="topbar-button">
+                    Add Your First Application
+                </a>
+            </div>
+        </section>
+
+        <footer class="footer">
+            Made with 💜 for your career journey.
+        </footer>
+
+    </main>
+</div>
 
 </body>
 </html>
-

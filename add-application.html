@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="description" content="Record a new job or internship application with CareerTrack.">
     <title>Add Application | CareerTrack</title>
 
     <link rel="stylesheet" href="css/style.css">
@@ -11,172 +12,174 @@
 </head>
 <body>
 
-    <div class="app-container">
+<div class="app-container">
 
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <div class="logo">
-                <span class="logo-icon">💼</span>
-                <h2>Career<span>Track</span></h2>
+    <aside class="sidebar">
+        <div class="logo">
+            <span class="logo-icon">💼</span>
+            <h2>Career<span>Track</span></h2>
+        </div>
+
+        <p class="menu-heading">MENU</p>
+
+        <nav class="sidebar-nav" aria-label="Main navigation">
+            <a href="index.html" class="nav-link">▦ Dashboard</a>
+            <a href="applications.html" class="nav-link">▤ My Applications</a>
+            <a href="add-application.html" class="nav-link active" aria-current="page">＋ Add Application</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="motivation-icon">✦</div>
+            <h3>Your next opportunity awaits!</h3>
+            <p>Keep track of your progress and take one step closer to your dream career.</p>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <p class="topbar-label">YOUR CAREER WORKSPACE</p>
+                <h2>Add a New Application</h2>
             </div>
 
-            <p class="menu-heading">MENU</p>
+            <a href="index.html" class="topbar-button">
+                ← Dashboard
+            </a>
+        </header>
 
-            <nav class="sidebar-nav">
-                <a href="index.html" class="nav-link">▦ Dashboard</a>
-                <a href="applications.html" class="nav-link">▤ My Applications</a>
-                <a href="add-application.html" class="nav-link active">＋ Add Application</a>
-            </nav>
-
-            <div class="sidebar-bottom">
-                <div class="motivation-icon">✦</div>
-                <h3>Your next opportunity awaits!</h3>
-                <p>Keep track of your progress and take one step closer to your dream career.</p>
+        <section class="welcome-section">
+            <div>
+                <p class="eyebrow">A NEW OPPORTUNITY</p>
+                <h1>Let's track your next step! ✨</h1>
+                <p class="welcome-text">
+                    Record your application details here and stay
+                    organised throughout your job search.
+                </p>
             </div>
-        </aside>
 
-        <!-- Main Content -->
-        <main class="main-content">
+            <div class="welcome-illustration" aria-hidden="true">💼</div>
+        </section>
 
-            <header class="topbar">
+        <section class="panel form-panel">
+
+            <div class="panel-heading">
                 <div>
-                    <p class="topbar-label">YOUR CAREER WORKSPACE</p>
-                    <h2>Add a New Application</h2>
+                    <p class="eyebrow">APPLICATION DETAILS</p>
+                    <h2>Tell us about the opportunity</h2>
                 </div>
+                <span class="heading-icon" aria-hidden="true">📝</span>
+            </div>
 
-                <a href="index.html" class="topbar-button">
-                    ← Back to Dashboard
-                </a>
-            </header>
+            <form id="applicationForm">
 
-            <section class="welcome-section">
-                <div>
-                    <p class="eyebrow">A NEW OPPORTUNITY</p>
-                    <h1>Let's track your next step! ✨</h1>
-                    <p class="welcome-text">
-                        Record your application details here so you can
-                        stay organised throughout your job search.
-                    </p>
-                </div>
+                <div class="form-grid">
 
-                <div class="welcome-illustration">💼</div>
-            </section>
-
-            <!-- Application Form -->
-            <section class="panel form-panel">
-
-                <div class="panel-heading">
-                    <div>
-                        <p class="eyebrow">APPLICATION DETAILS</p>
-                        <h2>Tell us about the opportunity</h2>
+                    <div class="form-group">
+                        <label for="company">Company Name *</label>
+                        <input
+                            type="text"
+                            id="company"
+                            name="company"
+                            placeholder="e.g. Microsoft"
+                            maxlength="100"
+                            autocomplete="organization"
+                            required
+                        >
                     </div>
 
-                    <span class="heading-icon">📝</span>
+                    <div class="form-group">
+                        <label for="jobTitle">Job Title *</label>
+                        <input
+                            type="text"
+                            id="jobTitle"
+                            name="jobTitle"
+                            placeholder="e.g. Software Engineering Intern"
+                            maxlength="100"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="applicationDate">Application Date *</label>
+                        <input
+                            type="date"
+                            id="applicationDate"
+                            name="applicationDate"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="status">Application Status *</label>
+                        <select id="status" name="status" required>
+                            <option value="Applied">Applied</option>
+                            <option value="Interview">Interview</option>
+                            <option value="Offer">Offer</option>
+                            <option value="Rejected">Rejected</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="jobLink">Job Posting Link</label>
+                        <input
+                            type="url"
+                            id="jobLink"
+                            name="jobLink"
+                            placeholder="https://example.com/job"
+                            maxlength="500"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="interviewDate">Interview Date</label>
+                        <input
+                            type="date"
+                            id="interviewDate"
+                            name="interviewDate"
+                        >
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="notes">Notes & Reminders</label>
+                        <textarea
+                            id="notes"
+                            name="notes"
+                            rows="5"
+                            maxlength="2000"
+                            placeholder="Interview preparation, contact details, follow-up reminders..."
+                        ></textarea>
+                    </div>
+
                 </div>
 
-                <form id="applicationForm">
+                <div
+                    id="formMessage"
+                    class="form-message"
+                    role="status"
+                    aria-live="polite"
+                ></div>
 
-                    <div class="form-grid">
+                <div class="form-actions">
+                    <button type="reset" class="secondary-button">
+                        Clear Form
+                    </button>
 
-                        <div class="form-group">
-                            <label for="company">Company Name *</label>
-                            <input
-                                type="text"
-                                id="company"
-                                name="company"
-                                placeholder="e.g. Microsoft"
-                                required
-                                maxlength="100"
-                            >
-                        </div>
+                    <button type="submit" class="primary-button">
+                        Save Application →
+                    </button>
+                </div>
 
-                        <div class="form-group">
-                            <label for="jobTitle">Job Title *</label>
-                            <input
-                                type="text"
-                                id="jobTitle"
-                                name="jobTitle"
-                                placeholder="e.g. Software Engineering Intern"
-                                required
-                                maxlength="100"
-                            >
-                        </div>
+            </form>
 
-                        <div class="form-group">
-                            <label for="applicationDate">Application Date *</label>
-                            <input
-                                type="date"
-                                id="applicationDate"
-                                name="applicationDate"
-                                required
-                            >
-                        </div>
+        </section>
 
-                        <div class="form-group">
-                            <label for="status">Application Status *</label>
-                            <select id="status" name="status" required>
-                                <option value="Applied">Applied</option>
-                                <option value="Interview">Interview</option>
-                                <option value="Offer">Offer</option>
-                                <option value="Rejected">Rejected</option>
-                            </select>
-                        </div>
+        <footer class="footer">
+            Made with 💜 for your career journey.
+        </footer>
 
-                        <div class="form-group">
-                            <label for="jobLink">Job Posting Link</label>
-                            <input
-                                type="url"
-                                id="jobLink"
-                                name="jobLink"
-                                placeholder="https://example.com/job"
-                                maxlength="500"
-                            >
-                        </div>
-
-                        <div class="form-group">
-                            <label for="interviewDate">Interview Date</label>
-                            <input
-                                type="date"
-                                id="interviewDate"
-                                name="interviewDate"
-                            >
-                        </div>
-
-                        <div class="form-group full-width">
-                            <label for="notes">Notes & Reminders</label>
-                            <textarea
-                                id="notes"
-                                name="notes"
-                                rows="5"
-                                maxlength="2000"
-                                placeholder="Add interview preparation notes, contact details, or follow-up reminders..."
-                            ></textarea>
-                        </div>
-
-                    </div>
-
-                    <div id="formMessage" class="form-message" role="status" aria-live="polite"></div>
-
-                    <div class="form-actions">
-                        <button type="reset" class="secondary-button">
-                            Clear Form
-                        </button>
-
-                        <button type="submit" class="primary-button">
-                            Save Application →
-                        </button>
-                    </div>
-
-                </form>
-
-            </section>
-
-            <footer class="footer">
-                Made with 💜 for your career journey.
-            </footer>
-
-        </main>
-    </div>
+    </main>
+</div>
 
 </body>
 </html>
